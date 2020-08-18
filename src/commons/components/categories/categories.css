@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+.all-categories {
+    width: 15vw;
+    height: 100vh;
+    margin: 0 70px;
+    padding: 40px 0;
+    border-right: 1px solid #B6B9C0;
+    border-bottom: 1px solid #B6B9C0;
+}
+
+#shop-by {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+}
+
+.options {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+ul li {
+    margin: 20px 0px;
+}
+
+ul > li > input {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    position: absolute;
+    overflow: hidden;
+}
+
+ul > li > span {
+    height: 10px;
+    width: 10px;
+    border: 1px solid black;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+ul > li > label {
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+[type=checkbox]:checked + span:before {
+    content: '\2714';
+    position: absolute;
+    top: -5px;
+    left: 0;
+}

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+header {
+    position: absolute;
+    background: transparent;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+    z-index: 1;
+}
+
+header img {
+    width: auto;
+    height: 100%;
+}
+
+#favorites,
+#shopping-bag {
+    cursor: pointer;
+}
+
+/* SEARCH-BAR */ 
+
+.search-field {
+    display: flex;
+    position: absolute;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    background-color: #ffffff;
+    padding: 5px;
+    margin-left: -10vw;
+}
+
+#search-icon {
+    cursor: pointer;
+}
+
+.search {
+    padding: 5px;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover {
+    transition: background-color 500s;
+}
+
+button {
+    background: transparent;
+    border: none;
+    outline: none;
+    display: block;
+}
+
+button:hover {
+    visibility: hidden;
+}
+
+.search-and-shop {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search-container,
+#shopping-bag {
+    margin: 0 10px;
+}

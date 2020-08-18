@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.menu {
+    list-style-type: none;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    padding-inline-start: 0;
+}
+
+.menu > li {
+    margin: 0 10px;
+    padding: 5px 0;
+}
+
+ul > li > a {
+    text-decoration: none;
+    color: white;
+    line-height: 20px;
+}
+
+ul > li > a:hover {
+    text-decoration: underline;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+/* DROPDOWN ITEM */
+.dropdown-container { 
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF;
+    min-width: 150px;
+    z-index: 1;
+    padding: 0;
+    margin: 5px 0;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.dropdown-content > li > a:hover {
+    text-decoration: none;
+}
+
+.dropdown-btn:hover {
+    text-decoration: none;
+}
+
+.dropdown-content > li > a {
+    color:#949494;
+    text-transform: none;
+}
+
+.dropdown-content > li {
+    cursor: pointer;
+    display: block;
+    margin: 0;
+    padding: 10px;
+}
+
+.dropdown-container > ul > li:hover {
+    background-color: #F4F4F4;
+}
+
+.dropdown-container:hover .dropdown-content {
+    display: block;
+}
+
+/* phone section */
+.phone-call {
+    color: #FFFFFF;
+}
+
+.phone-call > span {
+    margin: 0 10px;
+    font-weight: bold;
+}
