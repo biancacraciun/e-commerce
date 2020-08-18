@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Heart } from 'react-feather';
+
 import './product.css';
 
 const product = (props) => {

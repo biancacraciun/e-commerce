@@ -9,9 +9,9 @@ import './home.css';
 const home = () => {
     return (
         <>
-            <div className="landing-page">
-                <Header />
-            </div>
+            <Header />
+            <div className="landing-page" />
+            
             <div className="display-products">
                 <Categories />
                 <Products />
