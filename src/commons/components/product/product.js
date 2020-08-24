@@ -4,20 +4,28 @@ import { Heart } from 'react-feather';
 
 import './product.css';
 
-const product = (props) => {
-
+const Product = ({img, productName, productPrice}) => {
     return (
         <div className="product-container">
             <div className="img-section">
-                <div className="add-to-cart">Add to cart</div>
-                <img src={require('../../../assets/rucksack.jpg')} alt="backpack" name="packpack" />
+                <div className="product-actions">
+                    <div className="add-to-cart">Add to cart</div>
+                    <Heart size={15} color="red" />
+                </div>
+                <img src={img} alt={productName} name={productName} />
             </div>
             <div className="product-details">
-                <a href="#" role="button" id="product-name"> Backpack Vinta </a>
-                <span id="product-price"> $185.00 </span>
+                <a href="#" role="button" id="product-name"> {productName} </a>
+                <span id="product-price"> {productPrice} </span>
             </div>
         </div>
     )
 };
 
-export default product;
+Product.defaultProps = {
+    img: 'rucksack.jpg',
+    productName: 'Backpack Vinta',
+    productPrice: '$185.00'
+};
+
+export default Product;

@@ -6,61 +6,37 @@ import './header.css';
 
 class Header extends Component {
     state = {
-        hidden: true,
-        backgroundColor: ""
+        isHidden: true,
+        isScrolled: false,
     }
     
     componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener('scroll', this.handleScroll);
+    };
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
     };
     
     handleScroll = () => {
-        if(window.pageYOffset > 350) {
-            if(!this.state.className) {
-                this.setState({
-                    backgroundColor: "active"
-                })
-            }
-        } else {
-            this.setState({
-                backgroundColor: ""
-            })
-        }
+        window.pageYOffset > 500 ? this.setState({ isScrolled: true }) : this.setState({ isScrolled: false })
     };
 
-    searchClickHandler = () => {
-        this.setState({
-            hidden: !this.state.hidden
-        });
-    };   
-
-    focusHandler = () => {
-        const container = document.getElementsByClassName('search-field')[0];
-        container.style.border = "1px solid #80BDFF";
-        container.style.boxShadow = "0 0 0 0.1rem rgba(0, 123, 255, 0.25)";
-    }
-
     render() {
-        const conditionallyShow = this.state.hidden ? null : 
-        (<div className="search-field">
-            <input onFocus={this.focusHandler} className="search" type="search" name="search" placeholder="Search..." />
-            <button type="submit">
-                <Search color="black" size={15} />
-            </button>
-        </div>);
-
         return (
-            <header> 
-                <div className={`sticky-header ${this.state.backgroundColor}`}>
-                    <img src={require('../../../assets/Sport-logo-with-sneakers.png')} alt="banner-eCommerce" name="eCommerce" role="banner" />
+            <header>
+                <div className={`sticky-header ${this.state.isScrolled ? 'active' : ''}`}>
+                    <img src='Sport-logo-with-sneakers.png' alt="banner-eCommerce" name="banner-eCommerce" role="banner" />
                     <Menu />
                     <div className="search-and-shop">
                         <section className="search-container">
-                            <Search color="white" size={25} id="search-icon" onClick={this.searchClickHandler}/>
-                            {conditionallyShow}
+                            <label className="search" htmlFor="search-field">
+                                <Search color="white" size={25} className="icon"/>
+                                <input id="search-field" type="search" name="search" placeholder="Search..." />
+                            </label>
                         </section>
-                        <Heart color="white" size={25} id="favorites"/>
-                        <ShoppingBag color="white" size={25} id="shopping-bag"/>
+                        <Heart color="white" size={25} className="icon" />
+                        <ShoppingBag color="white" size={25} className="icon" id="shopping-bag"/>
                     </div>
                 </div>
             </header>

@@ -3,10 +3,11 @@ import React from 'react';
 import Header from '../commons/containers/header/header';
 import Categories from '../commons/components/categories/categories';
 import Products from '../commons/containers/products/products';
+import Slider from '../commons/components/slideshow/slider';
 
 import './home.css';
 
-const home = () => {
+const Home = () => {
     return (
         <>
             <Header />
@@ -16,8 +17,10 @@ const home = () => {
                 <Categories />
                 <Products />
             </div>
+
+            <Slider />
         </>
     )
 };
 
-export default home;
+export default Home;

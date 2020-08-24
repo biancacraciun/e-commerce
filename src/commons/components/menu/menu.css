@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
 .menu {
+    display: flex;
+    align-items: center;
     list-style-type: none;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
@@ -11,25 +10,20 @@
 
 .menu > li {
     margin: 0 10px;
-    padding: 5px 0;
 }
 
-ul > li > a {
+a {
     text-decoration: none;
-    color: white;
     line-height: 20px;
+    color: #ffffff;
 }
 
-ul > li > a:hover {
+.menu > li > a:hover {
     text-decoration: underline;
 }
 
-.menu {
-    display: flex;
-    align-items: center;
-}
-
 /* DROPDOWN ITEM */
+
 .dropdown-container { 
     position: relative;
     display: inline-block;
@@ -41,17 +35,11 @@ ul > li > a:hover {
     background-color: #FFFFFF;
     min-width: 150px;
     z-index: 1;
-    padding: 0;
-    margin: 5px 0;
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;
 }
 
-.dropdown-content > li > a:hover {
-    text-decoration: none;
-}
-
-.dropdown-btn:hover {
+.dropdown-container > .dropdown-btn:hover {
     text-decoration: none;
 }
 
@@ -63,8 +51,8 @@ ul > li > a:hover {
 .dropdown-content > li {
     cursor: pointer;
     display: block;
+    padding: 10px; 
     margin: 0;
-    padding: 10px;
 }
 
 .dropdown-container > ul > li:hover {
@@ -75,7 +63,6 @@ ul > li > a:hover {
     display: block;
 }
 
-/* phone section */
 .phone-call {
     color: #FFFFFF;
 }

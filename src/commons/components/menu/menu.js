@@ -4,7 +4,7 @@ import { PhoneCall } from 'react-feather';
 
 import './menu.css';
 
-const menu = () => {
+const Menu = () => {
     return (
         <ul className="menu">
             <li className="dropdown-container">
@@ -38,4 +38,4 @@ const menu = () => {
     )
 };
 
-export default menu;
+export default Menu;
