@@ -40,7 +40,6 @@ class Slider extends Component {
 
     keyChangeHandler = (e) => {
         e = e || window.event;
-        console.log(e)
         if(e.keyCode === 62) {
             this.increase()
         } else if(e.keyCode === 60) {
@@ -71,15 +70,6 @@ class Slider extends Component {
                     </div>
                     <span role="button" className="arrow" onClick={this.increase}>{">"}</span>
                 </div>
-                
-                <p className="description">
-                    The best running shoes are shoes that will be kind and gentle on your 
-                    feet throughout any running exercise.
-                    This benefit will reflect itself in its most striking way 
-                    immediately after a workout, when the way your feet feel 
-                    then is a good indication of whether you have the right pair 
-                    of running shoes or not.
-                </p>
             </div>
         );
     }   

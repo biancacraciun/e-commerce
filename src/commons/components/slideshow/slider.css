@@ -8,9 +8,10 @@
 }
 
 .slide-container > .slide {
+    display: inline-block;
+    background-size: cover;
     width: inherit;
     height: 450px;
-    /* position: absolute; */
 	-webkit-animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: fade-in 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
@@ -31,11 +32,6 @@
     100% {
       opacity: 1;
     }
-}
-  
-.description {
-    position: absolute;
-    display: none;
 }
 
 .changer {

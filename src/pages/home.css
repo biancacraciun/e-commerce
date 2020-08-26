@@ -7,12 +7,12 @@
     display: block;
 }
 
-.landing-page:after {
+.landing-page::after {
     content: '';
     position: absolute;
     left: 0px;
     top: 0px;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.7);
 }

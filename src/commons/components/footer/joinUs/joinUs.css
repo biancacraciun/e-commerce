@@ -1,0 +1,59 @@
+:root {
+    --margin-block: 25px;
+    --padding-box: 15px;
+}
+
+.join-us {
+    color: #ffffff;
+    text-transform: uppercase;
+    width: 15vw;
+}
+
+.join-us > h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    margin-block-end: var(--margin-block);
+}
+
+#subscribe {
+    display: flex;
+    flex-direction: column;
+}
+
+#motto,
+#subscribe,
+button[type=submit] {
+    margin: 10px 0;
+}
+
+.form-element {
+    outline: none;
+    padding: var(--padding-box);
+}
+
+input[type=email] {
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+input[type=email]::placeholder {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+}
+
+input[type=email]:-webkit-autofill,
+input[type=email]:-webkit-autofill:hover,
+input[type=email]:-webkit-autofill:focus, 
+input[type=email]:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff;
+}
+
+input[type=email]:focus {
+    border: 1px solid crimson;
+}
+
+button[type=submit] {
+    background: #ffffff;
+    border: none;
+}

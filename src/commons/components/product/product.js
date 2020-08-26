@@ -5,12 +5,13 @@ import { Heart } from 'react-feather';
 import './product.css';
 
 const Product = ({img, productName, productPrice}) => {
+
     return (
         <div className="product-container">
             <div className="img-section">
                 <div className="product-actions">
                     <div className="add-to-cart">Add to cart</div>
-                    <Heart size={15} color="red" />
+                    <Heart size={15} color="white" />
                 </div>
                 <img src={img} alt={productName} name={productName} />
             </div>

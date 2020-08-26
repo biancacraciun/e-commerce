@@ -1,0 +1,14 @@
+.recently-section {
+    width: 100vw;
+    height: 70vh;
+}
+
+#section-title {
+    width: inherit;
+    display: inline-block;
+    font-family: "Oswald", sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 100px;
+}

@@ -1,0 +1,49 @@
+.recently-product {
+    width: 230px;
+    height: 320px;
+    margin: 15px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.recently-product > img {
+    width: inherit;
+    height: inherit;
+}
+
+.title > p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+};
+
+.icon {
+    cursor: pointer;
+}
+
+.price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+}
+
+.add-to-shopping-bag {
+    visibility: hidden;
+    position: absolute;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 25px;
+    background: none;
+    transition: all .5s ease-in-out;
+}
+
+.recently-product:hover .add-to-shopping-bag {
+    cursor: pointer;
+    visibility: visible;
+    background: rgba(0, 0, 0, 0.5);
+}
