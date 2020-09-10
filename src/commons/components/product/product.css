@@ -1,77 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 .product-container {
-    display: inline-block;
-    width: 220px;
-    height: 320px;
-    margin: 10px;
+  display: inline-block;
+  width: 220px;
+  height: 320px;
+  margin: 10px;
 }
 
 .img-section > img {
-    width: 100%;
-    height: 250px;
+  width: 100%;
+  height: 250px;
 }
 
 .product-details {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-#product-name {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 21px;
-    cursor: pointer;
-    color: #000000;
-    text-decoration: none;
+.product-name {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 21px;
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
 }
 
-#product-price {
-    font-family: 'Oswald', sans-serif;
-    font-size: 18px;
-    line-height: 25px;
+.product-price {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  line-height: 25px;
 }
 
 .img-section {
-    position: relative;
-    display: block;
+  position: relative;
+  display: block;
 }
 
 .product-container:hover .product-actions {
-    opacity: 0.5;
-    visibility: visible;
-    cursor: pointer;
+  opacity: 0.5;
+  visibility: visible;
+  cursor: pointer;
 }
 
 .product-actions {
-    position: absolute;
-    width: 100%;
-    height: 30px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    background-color: #000000;
-    color: #ffffff;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    opacity: 0;
-    visibility: hidden;
-    transition: all .3s;
-};
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.fav-product {
+  color: red;
+}
+
+.heart {
+  color: white;
+}
 
 .product-container:hover .add-to-cart {
-    opacity: 0.7;
+  opacity: 0.7;
+}
+
+.add-to-cart:hover {
+  color: red;
 }
 
 .img-section:hover .product-actions:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .product-container:hover .img-section > img {
-    box-shadow: 8px 15px 24px -6px rgba(191,191,191,0.64);
-    transition: box-shadow 0.5s ease-in-out;
+  box-shadow: 8px 15px 24px -6px rgba(191, 191, 191, 0.64);
+  transition: box-shadow 0.5s ease-in-out;
 }

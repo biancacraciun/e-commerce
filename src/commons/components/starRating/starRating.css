@@ -1,7 +1,0 @@
-input[name="rating"] {
-    display: none;
-}
-
-.star:hover {
-    cursor: pointer;
-}   

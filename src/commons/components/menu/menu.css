@@ -1,74 +1,76 @@
 .menu {
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    position: relative;
-    padding-inline-start: 0;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  padding-inline-start: 0;
 }
 
 .menu > li {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
-a {
-    text-decoration: none;
-    line-height: 20px;
-    color: #ffffff;
+.menu-options,
+.dropdown-btn {
+  text-decoration: none;
+  line-height: 20px;
+  color: #ffffff;
 }
 
-.menu > li > a:hover {
-    text-decoration: underline;
+.menu > li > .menu-options:hover {
+  text-decoration: underline;
 }
 
 /* DROPDOWN ITEM */
 
-.dropdown-container { 
-    position: relative;
-    display: inline-block;
+.dropdown-container {
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #FFFFFF;
-    min-width: 150px;
-    z-index: 1;
-    font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 150px;
+  z-index: 1;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .dropdown-container > .dropdown-btn:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-.dropdown-content > li > a {
-    color:#949494;
-    text-transform: none;
+.dropdown-options {
+  color: #949494;
+  text-transform: none;
+  text-decoration: none;
 }
 
 .dropdown-content > li {
-    cursor: pointer;
-    display: block;
-    padding: 10px; 
-    margin: 0;
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  margin: 0;
 }
 
-.dropdown-container > ul > li:hover {
-    background-color: #F4F4F4;
+.dropdown-content > li:hover {
+  background-color: #f4f4f4;
 }
 
 .dropdown-container:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
 .phone-call {
-    color: #FFFFFF;
+  color: #ffffff;
 }
 
 .phone-call > span {
-    margin: 0 10px;
-    font-weight: bold;
-    border: none;
+  margin: 0 10px;
+  font-weight: bold;
+  border: none;
 }
