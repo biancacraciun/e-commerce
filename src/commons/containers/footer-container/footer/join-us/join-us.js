@@ -16,7 +16,7 @@ const JoinUs = () => {
           name="email-address"
           className="form-element"
         />
-        <button type="submit" className="form-element">
+        <button type="submit" className="go-button">
           GO!
         </button>
       </form>
