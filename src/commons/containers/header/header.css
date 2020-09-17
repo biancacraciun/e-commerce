@@ -62,8 +62,8 @@ input[type="search"]::placeholder {
 
 input[type="search"]:focus {
   width: 150px;
-  border-bottom: 1px solid #80bdff;
-  box-shadow: 0px 15px 10px -15px #80bdff;
+  border-bottom: 1px solid var(--very-light-blue);
+  box-shadow: 0px 15px 10px -15px var(--very-light-blue);
 }
 
 input:-webkit-autofill,

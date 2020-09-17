@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Menu from "../../components/menu/menu";
 import Storage from "../storage/storage";
@@ -8,9 +9,9 @@ import "./header.css";
 
 class Header extends Component {
   state = {
-    isHidden: true,
-    isCartHidden: true,
     isScrolled: false,
+    isFavHidden: true,
+    isCartHidden: true,
   };
 
   componentDidMount() {
@@ -21,12 +22,8 @@ class Header extends Component {
     window.removeEventListener("scroll", this.handleScroll);
   }
 
-  outsideClose = () => {
-    this.setState({
-      isCartHidden: true,
-      isHidden: true,
-    });
-  };
+  /* outside click */
+  outsideClose = () => {};
 
   handleScroll = () => {
     window.pageYOffset > 500
@@ -35,20 +32,28 @@ class Header extends Component {
   };
 
   handleFavourites = () => {
-    this.setState((prevState) => {
-      return {
-        isHidden: !prevState.isHidden,
-        isCartHidden: true,
-      };
+    this.setState({
+      isFavHidden: false,
+      isCartHidden: true,
+    });
+  };
+
+  favoritesOff = () => {
+    this.setState({
+      isFavHidden: true,
     });
   };
 
   handleCart = () => {
-    this.setState((prevState) => {
-      return {
-        isCartHidden: !prevState.isCartHidden,
-        isHidden: true,
-      };
+    this.setState({
+      isCartHidden: false,
+      isFavHidden: true,
+    });
+  };
+
+  cartOff = () => {
+    this.setState({
+      isCartHidden: true,
     });
   };
 
@@ -83,10 +88,14 @@ class Header extends Component {
                 color="white"
                 size={25}
                 className="icon"
-                onClick={() => this.handleFavourites()}
+                onMouseEnter={() => this.handleFavourites()}
               />
-              {this.state.isHidden ? null : (
-                <Storage component={"wishlist"} className="storage-component" />
+              {this.state.isFavHidden ? null : (
+                <Storage
+                  component={"wishlist"}
+                  className="storage-component"
+                  closeStorage={this.favoritesOff}
+                />
               )}
             </section>
 
@@ -96,12 +105,13 @@ class Header extends Component {
                 size={25}
                 className="icon"
                 id="shopping-bag"
-                onClick={() => this.handleCart()}
+                onMouseEnter={() => this.handleCart()}
               />
               {this.state.isCartHidden ? null : (
                 <Storage
                   component={"shopping cart"}
                   className="storage-component"
+                  closeStorage={this.cartOff}
                 />
               )}
             </section>

@@ -45,7 +45,7 @@
 }
 
 .dropdown-options {
-  color: #949494;
+  color: var(--medium-grey);
   text-transform: none;
   text-decoration: none;
 }
@@ -58,7 +58,7 @@
 }
 
 .dropdown-content > li:hover {
-  background-color: #f4f4f4;
+  background-color: var(--grey-tint);
 }
 
 .dropdown-container:hover .dropdown-content {

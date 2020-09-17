@@ -68,7 +68,7 @@
 }
 
 .heart {
-  color: white;
+  color: #ffffff;
 }
 
 .product-container:hover .add-to-cart {
@@ -84,6 +84,6 @@
 }
 
 .product-container:hover .img-section > img {
-  box-shadow: 8px 15px 24px -6px rgba(191, 191, 191, 0.64);
+  box-shadow: var(--grey-shadow);
   transition: box-shadow 0.5s ease-in-out;
 }

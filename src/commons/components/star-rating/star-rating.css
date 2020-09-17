@@ -7,11 +7,11 @@
 }
 
 .rating {
-  color: #ffc107;
+  color: var(--star-yellow);
 }
 
 .star {
-  color: #b6b9c0;
+  color: var(--grayish-blue);
 }
 
 .star:hover {
