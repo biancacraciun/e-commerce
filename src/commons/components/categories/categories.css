@@ -33,7 +33,7 @@
   list-style-type: none;
 }
 
-input[type="checkbox"] {
+.checkbox {
   visibility: hidden;
   height: 0;
   width: 0;
@@ -54,7 +54,7 @@ label {
   cursor: pointer;
 }
 
-input[type="checkbox"]:checked + .new-checkbox:before {
+.checkbox:checked + .new-checkbox:before {
   content: "\2714";
   position: absolute;
   top: -5px;
