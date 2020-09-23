@@ -1,14 +1,22 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
 import "./sign-in.css";
+import "../Layouts/layout/layout.css";
+
+import Email from "../../commons/util/email/email";
+import Password from "../../commons/util/password/password";
+import Layout from "../Layouts/layout/layout";
+
+import Container from "../Layouts/container/container";
 
 class SignIn extends Component {
   state = {
     emailValue: null,
     passwordValue: null,
-    error: {
-      emailErr: null,
-      passwordErr: null,
+    isError: {
+      isEmailErr: false,
+      isPasswordErr: false,
     },
     isSubmitted: false,
   };
@@ -27,9 +35,9 @@ class SignIn extends Component {
       this.setState((prevState) => {
         return {
           ...prevState,
-          error: {
-            ...prevState,
-            emailErr: "Invalid email address!",
+          isError: {
+            ...prevState.isError,
+            isEmailErr: true,
           },
         };
       });
@@ -37,9 +45,9 @@ class SignIn extends Component {
       this.setState((prevState) => {
         return {
           ...prevState,
-          error: {
-            ...prevState.error,
-            emailErr: null,
+          isError: {
+            ...prevState.isError,
+            isEmailErr: false,
           },
         };
       });
@@ -57,9 +65,9 @@ class SignIn extends Component {
       this.setState((prevState) => {
         return {
           ...prevState,
-          error: {
-            ...prevState.error,
-            passwordErr:
+          isError: {
+            ...prevState.isError,
+            isPasswordErr:
               "Password must contain at least one number and one uppercase and lowercase letter, and at least 7 or more characters",
           },
         };
@@ -68,9 +76,9 @@ class SignIn extends Component {
       this.setState((prevState) => {
         return {
           ...prevState,
-          error: {
-            ...prevState.error,
-            passwordErr: null,
+          isError: {
+            ...prevState.isError,
+            isPasswordErr: null,
           },
         };
       });
@@ -95,75 +103,46 @@ class SignIn extends Component {
   };
 
   render() {
+    const link = (
+      <Link to="/forgot-password" className="forgot-link">
+        Forgot Your Password?
+      </Link>
+    );
+
     {
       if (this.state.isSubmitted) {
         return <Redirect from="/sign-in" to="/" />;
       } else {
         return (
-          <div className="sign-in">
-            <p className="sign-in-header">Customer Login</p>
+          <Container title="Customer Login" className="sign-in">
+            <Layout
+              subtitle="Registered Customers"
+              details="If you have an account, sign in with your email address."
+              value="Sign In"
+              handleChange={this.handleChange}
+              link={link}
+            >
+              <Email
+                addEmail={this.addEmail}
+                isError={this.state.isError.isEmailErr}
+              />
+              <Password
+                password={this.passwordValidation}
+                isError={this.state.isError.isPasswordErr}
+              />
+            </Layout>
 
-            <div className="register-container">
-              <div className="registered-customers-container">
-                <span className="registered-customers">
-                  Registered Customers
-                </span>
-                <span className="registered-details">
-                  If you have an account, sign in with your email address.
-                </span>
-
-                <form className="register-form" onSubmit={this.handleChange}>
-                  <div className="form-section">
-                    <label htmlFor="email">
-                      Email: <span className="is-required">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      onChange={this.addEmail}
-                    />
-                    <span className="errors">{this.state.error.emailErr}</span>
-                  </div>
-
-                  <div className="form-section">
-                    <label htmlFor="password">
-                      Password: <span className="is-required">*</span>
-                    </label>
-                    <input
-                      type="password"
-                      name="password"
-                      id="password"
-                      onChange={this.passwordValidation}
-                    />
-                    <span className="errors">
-                      {this.state.error.passwordErr}
-                    </span>
-                  </div>
-
-                  <input
-                    type="submit"
-                    role="button"
-                    value="Sign In"
-                    className="submit-button"
-                  />
-                </form>
-
-                <span className="is-required">* Required Fields</span>
-              </div>
-
-              <div className="new-account">
-                <span className="new-customers">New Customers</span>
-                <span className="new-customers-details">
-                  Creating an account has many benefits: check out faster, keep
-                  more than one address, track orders and more.
-                </span>
-                <button type="button" className="account-button">
-                  Create an account
-                </button>
-              </div>
+            <div className="info">
+              <span className="subtitle">New Customers</span>
+              <span className="details">
+                Creating an account has many benefits: check out faster, keep
+                more than one address, track orders and more.
+              </span>
+              <Link to="/create-new-account" className="new-account">
+                Create an account
+              </Link>
             </div>
-          </div>
+          </Container>
         );
       }
     }

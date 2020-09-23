@@ -1,7 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+
+:root {
+  --grayish-blue: #b6b9c0;
+  --medium-grey: #949494;
+  --dark-grey: #a3a3a3;
+  --grey-tint: #f4f4f4;
+  --grey-shadow: 8px 15px 24px -6px rgba(191, 191, 191, 0.64);
+  --grey-box-shadow: 0px 10px 7px -4px rgba(211, 211, 211, 1);
+  --light-grey: #d3d3d3;
+  --star-yellow: #ffc107;
+  --crimson: #dc143c;
+  --very-light-blue: #80bdff;
+}
 
 *,
 *:before,
@@ -9,7 +23,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-};
+}
 
 * {
   margin: 0;
@@ -18,7 +32,7 @@
 body {
   width: 100vw;
   position: relative;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
   font-size: 14px;
-};
+}

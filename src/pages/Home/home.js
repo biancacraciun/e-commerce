@@ -16,6 +16,9 @@ import Footer from "../../commons/containers/footer-container/footer";
 import SignIn from "../../pages/Sign-In/sign-in";
 
 import "./home.css";
+import AccountRecovery from "../Account-Recovery/account-recovery";
+import ChangePassword from "../Change-Password/change-password";
+import NewAccount from "../New-Account/new-account";
 
 const Home = () => {
   return (
@@ -31,6 +34,15 @@ const Home = () => {
           </Route>
           <Route path="/sign-in">
             <SignIn />
+          </Route>
+          <Route path="/forgot-password">
+            <AccountRecovery />
+          </Route>
+          <Route path="/change-password">
+            <ChangePassword />
+          </Route>
+          <Route path="/create-new-account">
+            <NewAccount />
           </Route>
         </BrowserRouter>
       </div>
