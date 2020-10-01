@@ -53,6 +53,7 @@ class SignIn extends Component {
       });
     }
 
+    //
     const passwordValidation = new RegExp(
       "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{7,})"
     );
@@ -94,12 +95,56 @@ class SignIn extends Component {
     this.setState({
       emailValue: event.target.value,
     });
+
+    if (event.target.value === "") {
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          isError: {
+            ...prevState.isError,
+            isEmailErr: true,
+          },
+        };
+      });
+    } else {
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          isError: {
+            ...prevState.isError,
+            isEmailErr: false,
+          },
+        };
+      });
+    }
   };
 
   passwordValidation = (event) => {
     this.setState({
       passwordValue: event.target.value,
     });
+
+    if (event.target.value === "") {
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          isError: {
+            ...prevState.isError,
+            isPasswordErr: true,
+          },
+        };
+      });
+    } else {
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          isError: {
+            ...prevState.isError,
+            isPasswordErr: false,
+          },
+        };
+      });
+    }
   };
 
   render() {
