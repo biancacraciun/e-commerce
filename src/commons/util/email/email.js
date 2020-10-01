@@ -1,4 +1,6 @@
 import React from "react";
+import Error from "../error/error";
+
 import "../inputs.css";
 
 const Email = (props) => {
@@ -8,9 +10,7 @@ const Email = (props) => {
         Email: <span className="is-required">*</span>
       </label>
       <input type="email" name="email" id="email" onChange={props.addEmail} />
-      {props.isError ? (
-        <span className="errors">Invalid email address!</span>
-      ) : null}
+      {props.isError ? <Error errorMessage="Invalid email address!" /> : null}
     </div>
   );
 };
