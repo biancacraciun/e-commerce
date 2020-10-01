@@ -9,18 +9,26 @@
   margin: 10px 0;
 }
 
-.form-section > input {
+.form-section > input,
+.form-section > .input > input {
   padding: 10px;
-}
-
-.errors {
-  color: red;
-  font-size: 12px;
-  margin: 5px 0;
 }
 
 .captcha {
   font-family: "Fredericka the Great", cursive;
   font-size: 25px;
   margin-top: 10px;
+}
+
+.see-password {
+  border: none;
+  background: none;
+  outline: none;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.input {
+  display: flex;
+  align-items: center;
 }
