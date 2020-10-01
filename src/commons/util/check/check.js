@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+
+import Error from "../error/error";
 
 const Check = (props) => {
   return (
@@ -13,9 +15,7 @@ const Check = (props) => {
         id="check"
         onChange={props.checkedHandler}
       />
-      {props.isError ? (
-        <span className="errors">This is a required field.</span>
-      ) : null}
+      {props.isError ? <Error /> : null}
 
       <div className="captcha">{props.captcha}</div>
     </div>
