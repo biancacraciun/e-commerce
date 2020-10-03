@@ -1,0 +1,34 @@
+.form-section > label {
+  color: var(--dark-grey);
+  margin: 3px 0;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.form-section > input,
+.form-section > .input > input {
+  padding: 10px;
+}
+
+.captcha {
+  font-family: "Fredericka the Great", cursive;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.see-password {
+  border: none;
+  background: none;
+  outline: none;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+}
