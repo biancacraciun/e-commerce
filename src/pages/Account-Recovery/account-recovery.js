@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Container from "../Layouts/container/container";
 import Layout from "../Layouts/layout/layout";
-import Email from "../../commons/util/email/email";
-import Check from "../../commons/util/check/check";
+import Email from "../../commons/util/inputs/email/email";
+import Captcha from "../../commons/util/inputs/captcha/captcha";
 import { Redirect } from "react-router-dom";
 
 class AccountRecovery extends Component {
@@ -15,6 +15,9 @@ class AccountRecovery extends Component {
     code: null,
     captcha: null,
     isSubmitted: false,
+    isRequired: null,
+    isValid: null,
+    isValidCaptcha: null,
   };
 
   componentDidMount() {
@@ -28,9 +31,17 @@ class AccountRecovery extends Component {
       /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     );
 
-    if (this.state.email === null || !emailValidation.test(this.state.email)) {
+    if (this.state.email === null || this.state.email === "") {
+      this.setState({
+        isRequired: true,
+        isError: {
+          isEmailError: false,
+        },
+      });
+    }
+
+    if (!emailValidation.test(this.state.email)) {
       this.setState((prevState) => {
-        console.log(prevState);
         return {
           ...prevState,
           isError: {
@@ -52,14 +63,10 @@ class AccountRecovery extends Component {
     }
 
     if (this.state.code === null) {
-      this.setState((prevState) => {
-        return {
-          ...prevState,
-          isError: {
-            ...prevState.isError,
-            isCaptchaError: true,
-          },
-        };
+      this.setState({
+        isError: {
+          isCaptchaError: true,
+        },
       });
     }
 
@@ -71,17 +78,12 @@ class AccountRecovery extends Component {
             ...prevState.isError,
             isCaptchaError: false,
           },
+          isValidCaptcha: true,
         };
       });
     } else {
-      this.setState((prevState) => {
-        return {
-          ...prevState,
-          isError: {
-            ...prevState.isError,
-            isCaptchaError: true,
-          },
-        };
+      this.setState({
+        isValidCaptcha: false,
       });
     }
 
@@ -103,11 +105,8 @@ class AccountRecovery extends Component {
 
     for (let i = 0; i < 5; i++) {
       let index = Math.floor(Math.random() * random.length + 1);
-
       if (captcha.indexOf(random[index]) === -1) {
         captcha.push(random[index]);
-      } else {
-        i--;
       }
     }
 
@@ -118,12 +117,36 @@ class AccountRecovery extends Component {
     this.setState({
       code: event.target.value,
     });
+
+    if (event.target.value !== "") {
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          isError: {
+            isCaptchaError: false,
+          },
+          isValidCaptcha: true,
+        };
+      });
+    }
   };
 
   addEmailAddres = (event) => {
     this.setState({
       email: event.target.value,
     });
+
+    if (event.target.value !== "") {
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          isError: {
+            isEmailError: false,
+          },
+          isRequired: false,
+        };
+      });
+    }
   };
 
   render() {
@@ -140,11 +163,13 @@ class AccountRecovery extends Component {
             <Email
               addEmail={this.addEmailAddres}
               isError={this.state.isError.isEmailError}
+              isRequired={this.state.isRequired}
             />
-            <Check
+            <Captcha
               checkedHandler={this.codeHandle}
               isError={this.state.isError.isCaptchaError}
               captcha={this.state.captcha}
+              isValidCaptcha={this.state.isValidCaptcha}
             />
           </Layout>
         )}
