@@ -14,7 +14,6 @@ class AccountRecovery extends Component {
     },
     code: null,
     captcha: null,
-    isSubmitted: false,
     isRequired: null,
     isValid: null,
     isValidCaptcha: null,
@@ -27,6 +26,7 @@ class AccountRecovery extends Component {
   }
 
   handleChange = (event) => {
+    event.preventDefault();
     const emailValidation = new RegExp(
       /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     );
@@ -86,16 +86,6 @@ class AccountRecovery extends Component {
         isValidCaptcha: false,
       });
     }
-
-    if (
-      this.state.isError.isEmailError === false &&
-      this.state.isError.isCaptchaError === false
-    ) {
-      this.setState({
-        isSubmitted: true,
-      });
-    }
-    event.preventDefault();
   };
 
   createCaptcha = () => {
@@ -123,6 +113,7 @@ class AccountRecovery extends Component {
         return {
           ...prevState,
           isError: {
+            ...prevState.isError,
             isCaptchaError: false,
           },
           isValidCaptcha: true,
@@ -141,6 +132,7 @@ class AccountRecovery extends Component {
         return {
           ...prevState,
           isError: {
+            ...prevState.isError,
             isEmailError: false,
           },
           isRequired: false,
