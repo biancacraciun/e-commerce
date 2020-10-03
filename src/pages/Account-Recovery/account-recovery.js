@@ -17,6 +17,7 @@ class AccountRecovery extends Component {
     isRequired: null,
     isValid: null,
     isValidCaptcha: null,
+    isSubmitted: false,
   };
 
   componentDidMount() {
@@ -32,11 +33,16 @@ class AccountRecovery extends Component {
     );
 
     if (this.state.email === null || this.state.email === "") {
-      this.setState({
-        isRequired: true,
-        isError: {
-          isEmailError: false,
-        },
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          isRequired: true,
+          isError: {
+            ...prevState.isError,
+            isEmailError: false,
+          },
+          isSubmitted: false,
+        };
       });
     }
 
@@ -48,6 +54,7 @@ class AccountRecovery extends Component {
             ...prevState.isError,
             isEmailError: true,
           },
+          isSubmitted: false,
         };
       });
     } else {
@@ -62,11 +69,16 @@ class AccountRecovery extends Component {
       });
     }
 
-    if (this.state.code === null) {
-      this.setState({
-        isError: {
-          isCaptchaError: true,
-        },
+    if (this.state.code === null || this.state.code === "") {
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          isError: {
+            ...prevState.isError,
+            isCaptchaError: true,
+          },
+          isSubmitted: false,
+        };
       });
     }
 
@@ -84,6 +96,18 @@ class AccountRecovery extends Component {
     } else {
       this.setState({
         isValidCaptcha: false,
+        isSubmitted: false,
+      });
+    }
+
+    if (
+      this.state.email !== "" &&
+      this.state.code !== "" &&
+      this.state.captcha === this.state.code &&
+      emailValidation.test(this.state.email)
+    ) {
+      this.setState({
+        isSubmitted: true,
       });
     }
   };
