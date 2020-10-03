@@ -4,8 +4,8 @@ import { Redirect } from "react-router";
 import "./sign-in.css";
 import "../Layouts/layout/layout.css";
 
-import Email from "../../commons/util/email/email";
-import Password from "../../commons/util/password/password";
+import Email from "../../commons/util/inputs/email/email";
+import Password from "../../commons/util/inputs/password/password";
 import Layout from "../Layouts/layout/layout";
 
 import Container from "../Layouts/container/container";
