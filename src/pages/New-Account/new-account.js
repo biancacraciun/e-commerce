@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 import Container from "../Layouts/container/container";
 import Layout from "../Layouts/layout/layout";
-import Email from "../../commons/util/email/email";
-import Password from "../../commons/util/password/password";
-import BasicInput from "../../commons/util/basic-input/basic-input";
+import Email from "../../commons/util/inputs/email/email";
+import Password from "../../commons/util/inputs/password/password";
+import BasicInput from "../../commons/util/inputs/basic-input/basic-input";
 
 import "./new-account.css";
 
