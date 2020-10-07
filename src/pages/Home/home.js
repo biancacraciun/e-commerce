@@ -19,6 +19,8 @@ import "./home.css";
 import AccountRecovery from "../Account-Recovery/account-recovery";
 import ChangePassword from "../Change-Password/change-password";
 import NewAccount from "../New-Account/new-account";
+import Customer from "../Customer/customer";
+import LoggedIn from "../Logged-In/logged-in";
 
 const Home = () => {
   return (
@@ -43,6 +45,9 @@ const Home = () => {
           </Route>
           <Route path="/create-new-account">
             <NewAccount />
+          </Route>
+          <Route path="/auth">
+            <LoggedIn />
           </Route>
         </BrowserRouter>
       </div>
