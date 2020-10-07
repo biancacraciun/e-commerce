@@ -9,12 +9,17 @@
   --medium-grey: #949494;
   --dark-grey: #a3a3a3;
   --grey-tint: #f4f4f4;
+  --white-smoke: #f5f5f5;
   --grey-shadow: 8px 15px 24px -6px rgba(191, 191, 191, 0.64);
   --grey-box-shadow: 0px 10px 7px -4px rgba(211, 211, 211, 1);
   --light-grey: #d3d3d3;
   --star-yellow: #ffc107;
   --crimson: #dc143c;
   --very-light-blue: #80bdff;
+  --very-dark-grey: #313131;
+  --grimmys-grey: #777;
+  --light-grayish-orange: #fdf0d5;
+  --very-dark-orange: #6f4400;
 }
 
 *,
