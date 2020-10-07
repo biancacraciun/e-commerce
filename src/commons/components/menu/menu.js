@@ -11,7 +11,6 @@ import {
 import { PhoneCall } from "react-feather";
 
 import "./menu.css";
-import SignIn from "../../../pages/Sign-In/sign-in";
 
 const Menu = () => {
   return (
