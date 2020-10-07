@@ -1,0 +1,15 @@
+.message-info {
+  display: flex;
+  align-items: center;
+  background-color: var(--light-grayish-orange);
+  width: 100%;
+  padding: 10px;
+}
+
+.alert-icon {
+  margin: 0 10px;
+}
+
+.order-alert {
+  color: var(--very-dark-orange);
+}
