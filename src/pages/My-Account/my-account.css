@@ -1,0 +1,39 @@
+* {
+  color: var(--very-dark-grey);
+}
+
+.my-account {
+  width: 60%;
+}
+
+.account-information,
+.address-book {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.titles {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.cards-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.address-manager {
+  text-decoration: none;
+}
+
+.address-manager:hover {
+  text-decoration: underline;
+}
