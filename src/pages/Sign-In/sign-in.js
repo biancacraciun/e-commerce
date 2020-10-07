@@ -39,19 +39,21 @@ class SignIn extends Component {
             ...prevState.isError,
             isEmailErr: true,
           },
-        };
-      });
-    } else {
-      this.setState((prevState) => {
-        return {
-          ...prevState,
-          isError: {
-            ...prevState.isError,
-            isEmailErr: false,
-          },
+          isSubmitted: false,
         };
       });
     }
+    // } else {
+    //   this.setState((prevState) => {
+    //     return {
+    //       ...prevState,
+    //       isError: {
+    //         ...prevState.isError,
+    //         isEmailErr: false,
+    //       },
+    //     };
+    //   });
+    // }
 
     //
     const passwordValidation = new RegExp(
@@ -96,17 +98,7 @@ class SignIn extends Component {
       emailValue: event.target.value,
     });
 
-    if (event.target.value === "") {
-      this.setState((prevState) => {
-        return {
-          ...prevState,
-          isError: {
-            ...prevState.isError,
-            isEmailErr: true,
-          },
-        };
-      });
-    } else {
+    if (event.target.value !== "") {
       this.setState((prevState) => {
         return {
           ...prevState,
@@ -124,17 +116,7 @@ class SignIn extends Component {
       passwordValue: event.target.value,
     });
 
-    if (event.target.value === "") {
-      this.setState((prevState) => {
-        return {
-          ...prevState,
-          isError: {
-            ...prevState.isError,
-            isPasswordErr: true,
-          },
-        };
-      });
-    } else {
+    if (event.target.value !== "") {
       this.setState((prevState) => {
         return {
           ...prevState,
