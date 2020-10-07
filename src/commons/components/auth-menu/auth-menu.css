@@ -1,0 +1,20 @@
+.navigation > li {
+  padding: 8px 15px;
+  border-bottom: 1px solid var(--grimmys-grey);
+  padding-inline-start: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--dark-grey);
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+}
+
+.navigation > li {
+  list-style-type: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
