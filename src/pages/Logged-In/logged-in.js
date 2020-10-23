@@ -10,6 +10,8 @@ import "./logged-in.css";
 import MyAccount from "../My-Account/my-account";
 import Orders from "../Orders/Orders";
 import AuthMenu from "../../commons/components/auth-menu/auth-menu";
+import MyWishList from "../My-Wishlist/my-wishlist";
+import AddressBook from "../Address-Book/address-book";
 
 const LoggedIn = (props) => {
   return (
@@ -24,6 +26,12 @@ const LoggedIn = (props) => {
           </Route>
           <Route path="/auth/order">
             <Orders />
+          </Route>
+          <Route path="/auth/wishlist">
+            <MyWishList />
+          </Route>
+          <Route path="/auth/address">
+            <AddressBook />
           </Route>
         </Switch>
       </div>
