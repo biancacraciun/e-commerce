@@ -1,12 +1,11 @@
 import React from "react";
-
 import "./categories.css";
 
 const Categories = () => {
   return (
     <div className="all-categories">
-      <span className="shop-by common-margin">SHOP BY:</span>
-      <nav className="options common-margin">
+      <span className="container-title">SHOP BY:</span>
+      <nav className="options">
         <ul className="options-list">
           <li>
             <input
