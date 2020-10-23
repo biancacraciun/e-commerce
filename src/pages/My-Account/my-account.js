@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Card from "../../commons/util/cards/card";
+import Card from "../../commons/util/components/cards/card";
 import "./my-account.css";
 
 const MyAccount = () => {
