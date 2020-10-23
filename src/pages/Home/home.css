@@ -19,6 +19,18 @@
 
 .display-products {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   height: 90vh;
+}
+
+@media (max-width: 850px) {
+  .landing-page {
+    background-color: var(--black);
+    background-image: none;
+    height: 10vh;
+  }
+
+  .landing-page::after {
+    display: none;
+  }
 }
