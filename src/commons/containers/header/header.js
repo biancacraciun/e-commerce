@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Menu from "../../components/menu/menu";
 import Storage from "../storage/storage";
+import DrawerToggleButton from "../../components/drawer-toggle-button/drawer-toggle-button";
 
 import { Search, ShoppingBag, Heart } from "react-feather";
 import "./header.css";
+import SideDrawer from "../../components/side-drawer/side-drawer";
 
 class Header extends Component {
   state = {
@@ -61,7 +63,9 @@ class Header extends Component {
     return (
       <header>
         <div
-          className={`sticky-header ${this.state.isScrolled ? "active" : ""}`}
+          className={`sticky-header ${
+            this.state.isScrolled ? "active-scroll" : ""
+          }`}
         >
           <img
             src="Sport-logo-with-sneakers.png"
@@ -69,6 +73,7 @@ class Header extends Component {
             name="banner-eCommerce"
             role="banner"
           />
+          <DrawerToggleButton openMenu={this.props.openSideDrawer} />
           <Menu />
           <div className="search-and-shop">
             <section className="search-container">
