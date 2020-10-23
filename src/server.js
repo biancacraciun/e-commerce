@@ -3109,7 +3109,7 @@ const data = {
     },
     {
       category: "shoes",
-      type: "trail running",
+      type: "trail-running",
       gender: "female",
       brand: "Brooks",
       model: "Caldera 4",
@@ -3270,7 +3270,7 @@ const data = {
     },
     {
       category: "shoes",
-      type: "trail running",
+      type: "trail-running",
       gender: "male",
       brand: "Brooks",
       model: "Cascadia 15 GTX",
@@ -3544,7 +3544,7 @@ const data = {
     },
     {
       category: "shoes",
-      type: "trail running",
+      type: "trail-running",
       gender: "male",
       brand: "New Balance",
       model: "Fresh Foam Hierro v5",
@@ -3575,7 +3575,7 @@ const data = {
     },
     {
       category: "shoes",
-      type: "trail running",
+      type: "trail-running",
       gender: "male",
       brand: "New Balance",
       model: "Shando",
