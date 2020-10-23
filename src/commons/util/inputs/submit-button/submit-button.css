@@ -1,0 +1,13 @@
+.submit-button {
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: var(--white);
+  text-transform: uppercase;
+  background-color: var(--black);
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  margin: 5px 0;
+  cursor: pointer;
+  align-self: flex-end;
+}
