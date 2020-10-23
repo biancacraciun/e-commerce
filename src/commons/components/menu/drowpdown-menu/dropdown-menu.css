@@ -1,0 +1,12 @@
+.hide {
+  display: none;
+}
+
+.dropdown {
+  background-color: var(--very-light-grey-white);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.arrow-right {
+  margin: 0 5px;
+}
