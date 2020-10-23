@@ -4,9 +4,7 @@ import Container from "../Layouts/container/container";
 import Layout from "../Layouts/layout/layout";
 import Email from "../../commons/util/inputs/email/email";
 import Password from "../../commons/util/inputs/password/password";
-import BasicInput from "../../commons/util/inputs/basic-input/basic-input";
-
-import "./new-account.css";
+import StandardForm from "../../commons/util/components/forms/standard-form/standard-form";
 
 class NewAccount extends Component {
   state = {
@@ -218,7 +216,7 @@ class NewAccount extends Component {
   };
 
   firstNameHandler = (event) => {
-    if (event.target.value !== "") {
+    if (event.target.value !== "" || event.target.value !== null) {
       this.setState((prevState) => {
         return {
           ...prevState,
@@ -232,25 +230,26 @@ class NewAccount extends Component {
           },
         };
       });
-    } else {
-      this.setState((prevState) => {
-        return {
-          ...prevState,
-          isEmpty: {
-            ...prevState.isEmpty,
-            isFirstNameEmpty: true,
-          },
-          isError: {
-            ...prevState.isError,
-            isFirstNameError: true,
-          },
-        };
-      });
     }
+    //   } else {
+    //     this.setState((prevState) => {
+    //       return {
+    //         ...prevState,
+    //         isEmpty: {
+    //           ...prevState.isEmpty,
+    //           isFirstNameEmpty: true,
+    //         },
+    //         isError: {
+    //           ...prevState.isError,
+    //           isFirstNameError: true,
+    //         },
+    //       };
+    //     });
+    //   }
   };
 
   lastNameHandler = (event) => {
-    if (event.target.value !== "") {
+    if (event.target.value !== "" || event.target.value !== null) {
       this.setState((prevState) => {
         return {
           ...prevState,
@@ -264,21 +263,22 @@ class NewAccount extends Component {
           },
         };
       });
-    } else {
-      this.setState((prevState) => {
-        return {
-          ...prevState,
-          isEmpty: {
-            ...prevState.isEmpty,
-            isLastNameEmpty: true,
-          },
-          isError: {
-            ...prevState.isError,
-            isLastNameError: true,
-          },
-        };
-      });
     }
+    // } else {
+    //   this.setState((prevState) => {
+    //     return {
+    //       ...prevState,
+    //       isEmpty: {
+    //         ...prevState.isEmpty,
+    //         isLastNameEmpty: true,
+    //       },
+    //       isError: {
+    //         ...prevState.isError,
+    //         isLastNameError: true,
+    //       },
+    //     };
+    //   });
+    // }
   };
 
   addPassword = (event) => {
@@ -312,39 +312,14 @@ class NewAccount extends Component {
   render() {
     return (
       <Container title="Create New Customer Account">
-        <Layout
-          value="Create an Account"
-          className="grid"
-          handleChange={this.createNewAccount}
-        >
-          <div className="personal-information">
-            <p className="title">Personal Information</p>
-            <BasicInput
-              for="first-name"
-              forText="First Name"
-              dataHandler={this.firstNameHandler}
-              isError={this.state.isError.isFirstNameError}
-            />
-            <BasicInput
-              for="last-name"
-              forText="Last Name"
-              dataHandler={this.lastNameHandler}
-              isError={this.state.isError.isLastNameError}
-            />
-            <div className="inputs">
-              <input
-                type="checkbox"
-                id="newsletter"
-                name="newsletter"
-                value="Newsletter"
-                className="newsletter"
-              />
-              <label htmlFor="newsletter" className="sign-up-label">
-                Sign Up for Newsletter
-              </label>
-            </div>
-          </div>
-          <div className="sign-in-information">
+        <Layout value="Create an Account" handleChange={this.createNewAccount}>
+          <StandardForm
+            firstNameHandler={this.firstNameHandler}
+            lastNameHandler={this.lastNameHandler}
+            firstNameError={this.state.isError.isFirstNameError}
+            lastNameError={this.state.isError.isLastNameError}
+          />
+          <div className="new-account-section">
             <p className="title">Sign-in Information</p>
             <Email
               addEmail={this.addEmail}
