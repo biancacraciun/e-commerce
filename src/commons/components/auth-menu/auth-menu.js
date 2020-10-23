@@ -35,7 +35,7 @@ const AuthMenu = () => {
         </li>
         <li>
           <NavLink
-            to="auth/address/new"
+            to="/auth/address"
             className="nav-link"
             activeStyle={{ fontWeight: "bold", backgroundColor: "transparent" }}
           >
