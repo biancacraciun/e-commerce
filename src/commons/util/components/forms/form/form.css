@@ -1,0 +1,14 @@
+.register-form {
+  width: 100%;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.is-required {
+  color: var(--red);
+}
