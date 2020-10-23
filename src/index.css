@@ -9,6 +9,8 @@
   --medium-grey: #949494;
   --dark-grey: #a3a3a3;
   --grey-tint: #f4f4f4;
+  --very-light-grey: #f6f6f6;
+  --very-light-grey-white: #eeeeee;
   --white-smoke: #f5f5f5;
   --grey-shadow: 8px 15px 24px -6px rgba(191, 191, 191, 0.64);
   --grey-box-shadow: 0px 10px 7px -4px rgba(211, 211, 211, 1);
@@ -20,6 +22,9 @@
   --grimmys-grey: #777;
   --light-grayish-orange: #fdf0d5;
   --very-dark-orange: #6f4400;
+  --black: #000000;
+  --red: #ff0000;
+  --white: #ffffff;
 }
 
 *,
@@ -40,4 +45,29 @@ body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
   font-size: 14px;
+}
+
+.new-account-section {
+  margin-top: 25px;
+}
+
+.navigation-link {
+  border-bottom: 1px solid var(--light-grey);
+  text-decoration: none;
+  color: var(--very-dark-grey);
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 8px 36px 8px 15px;
+}
+
+.navlink {
+  text-decoration: none;
+}
+
+@media (max-width: 850px) {
+  /* *,
+  *:before,
+  *:after {
+    box-sizing: content-box;
+  } */
 }
