@@ -8,16 +8,16 @@
 
 .content {
   border: 1px solid var(--light-grey);
-  border-top: 5px solid black;
+  border-top: 5px solid var(--black);
   padding: 25px;
   width: 70vw;
   height: auto;
   box-shadow: var(--grey-box-shadow);
   display: flex;
-  justify-content: space-around;
 }
 
 .container-title {
   font-size: 20px;
   font-weight: 300;
+  margin: 20px;
 }
