@@ -1,14 +1,8 @@
 import React from "react";
-import NoOrders from "../../commons/util/alerts/no-orders";
+import AuthPage from "../../commons/util/components/auth-page/auth-page";
 
-import "./orders.css";
-
-const Orders = (props) => {
-  return <div className="order">{props.message}</div>;
-};
-
-Orders.defaultProps = {
-  message: <NoOrders />,
+const Orders = () => {
+  return <AuthPage alertMessage="You have place no orders." />;
 };
 
 export default Orders;
