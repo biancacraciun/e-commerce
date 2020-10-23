@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import Error from "../error/error";
-import { Eye, EyeOff, Check } from "react-feather";
+import { Eye, EyeOff } from "react-feather";
 import "../inputs.css";
 
 const Password = (props) => {
   const [inputType, changeInputType] = useState("password");
+
+  const eyeChanger = () => {
+    if (inputType === "password") {
+      changeInputType("text");
+      setTimeout(() => changeInputType("password"), 500);
+    }
+  };
 
   return (
     <div className="form-section">
@@ -17,14 +24,11 @@ const Password = (props) => {
           name="password"
           id={props.id}
           onChange={props.password}
+          className="password-input"
         />
         <button
           type="button"
-          onClick={() =>
-            inputType === "password"
-              ? changeInputType("text")
-              : changeInputType("password")
-          }
+          onClick={() => eyeChanger()}
           className="see-password"
         >
           {inputType === "password" ? <EyeOff /> : <Eye />}
@@ -45,9 +49,5 @@ Password.defaultProps = {
   label: "Password",
   id: "password",
   errorMessage: "This is a required field.",
-  passwordErr: null,
-  noConfirmation: null,
-  isConfirmation: null,
-  isValid: null,
 };
 export default Password;
