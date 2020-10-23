@@ -14,6 +14,10 @@
   padding: 10px;
 }
 
+.form-section > .input > .password-input {
+  width: 100%;
+}
+
 .captcha {
   font-family: "Fredericka the Great", cursive;
   font-size: 25px;
