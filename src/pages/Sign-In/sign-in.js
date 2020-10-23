@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
+
 import "./sign-in.css";
 import "../Layouts/layout/layout.css";
 
 import Email from "../../commons/util/inputs/email/email";
 import Password from "../../commons/util/inputs/password/password";
 import Layout from "../Layouts/layout/layout";
-
 import Container from "../Layouts/container/container";
 
 class SignIn extends Component {
@@ -19,6 +19,7 @@ class SignIn extends Component {
       isPasswordErr: false,
     },
     isSubmitted: false,
+    isRequired: null,
   };
 
   handleChange = (event) => {
@@ -28,10 +29,7 @@ class SignIn extends Component {
       /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     );
 
-    if (
-      !emailValidation.test(this.state.emailValue) ||
-      this.state.emailValue === null
-    ) {
+    if (!emailValidation.test(this.state.emailValue)) {
       this.setState((prevState) => {
         return {
           ...prevState,
@@ -40,22 +38,25 @@ class SignIn extends Component {
             isEmailErr: true,
           },
           isSubmitted: false,
+          isRequired: false,
         };
       });
     }
-    // } else {
-    //   this.setState((prevState) => {
-    //     return {
-    //       ...prevState,
-    //       isError: {
-    //         ...prevState.isError,
-    //         isEmailErr: false,
-    //       },
-    //     };
-    //   });
-    // }
 
-    //
+    if (this.state.emailValue === null || this.state.emailValue === "") {
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          isError: {
+            ...prevState.isError,
+            isEmailErr: false,
+          },
+          isRequired: true,
+          isSubmitted: false,
+        };
+      });
+    }
+
     const passwordValidation = new RegExp(
       "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{7,})"
     );
@@ -106,6 +107,7 @@ class SignIn extends Component {
             ...prevState.isError,
             isEmailErr: false,
           },
+          isRequired: false,
         };
       });
     }
@@ -145,13 +147,14 @@ class SignIn extends Component {
             <Layout
               subtitle="Registered Customers"
               details="If you have an account, sign in with your email address."
-              value="Sign In"
               handleChange={this.handleChange}
               link={link}
+              buttonVal="SIGN IN"
             >
               <Email
                 addEmail={this.addEmail}
                 isError={this.state.isError.isEmailErr}
+                isRequired={this.state.isRequired}
               />
               <Password
                 password={this.passwordValidation}
