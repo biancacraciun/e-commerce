@@ -40,7 +40,7 @@ const Menu = () => {
         </li>
         <li>
           <a href="#" className="menu-options">
-            Contact us
+            Contact Us
           </a>
         </li>
         <li>

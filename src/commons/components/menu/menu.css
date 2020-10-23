@@ -74,3 +74,9 @@
   font-weight: bold;
   border: none;
 }
+
+@media (max-width: 850px) {
+  .menu {
+    display: none;
+  }
+}
