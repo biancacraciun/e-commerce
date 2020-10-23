@@ -7,6 +7,5 @@ const Error = (props) => {
 
 Error.defaultProps = {
   errorMessage: "This is a required field.",
-  message: null,
 };
 export default Error;
