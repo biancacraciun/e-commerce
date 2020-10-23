@@ -1,0 +1,31 @@
+.toggle-button {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .toggle-button__line {
+    width: 20px;
+    height: 1px;
+    border: 1px solid var(--white);
+    background-color: var(--white);
+    margin: 2px;
+  }
+
+  .toggle-button {
+    background: none;
+    outline: none;
+    width: 25px;
+    border: none;
+    /* margin: 5px; */
+    /* padding: 5px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .drawer-toggle-button__active-line {
+    border: 1px solid var(--black);
+    background-color: var(--black);
+  }
+}
