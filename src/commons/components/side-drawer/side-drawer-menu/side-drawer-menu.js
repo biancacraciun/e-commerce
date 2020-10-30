@@ -43,15 +43,6 @@ const SideDrawerMenu = (props) => {
             />
             Menu
           </button>
-          {/* <Link
-             to="/"
-            className={`${ 
-              isMenuActive
-                ? "active__side-drawer-link navigation-link drawer-toggle-button__menu navigation-button"
-                : "navigation-link drawer-toggle-button__menu navigation-button"
-            }`}
-          >
-          </Link> */}
         </li>
         <li onClick={() => account()} className="list-item">
           <button
@@ -63,16 +54,6 @@ const SideDrawerMenu = (props) => {
           >
             Account
           </button>
-          {/* <Link
-            to="/"
-            className={`${
-              isAccountActive
-                ? "active__side-drawer-link navigation-link drawer-toggle-button__menu navigation-button"
-                : "navigation-link drawer-toggle-button__menu navigation-button"
-            }`}
-          >
-            Account
-          </Link> */}
         </li>
       </ul>
     </nav>
