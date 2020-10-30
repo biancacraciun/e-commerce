@@ -1,18 +1,10 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  NavLink,
-} from "react-router-dom";
-// import { useToggle } from "../../../util/functions/toogle-hook";
 
 import DrawerToggleButton from "../../drawer-toggle-button/drawer-toggle-button";
 import "./side-drawer-menu.css";
 
-const SideDrawerMenu = () => {
-  const [isMenuActive, setMenuActive] = useState(false);
+const SideDrawerMenu = (props) => {
+  const [isMenuActive, setMenuActive] = useState(true);
   const [isAccountActive, setAccountActive] = useState(false);
 
   const menu = () => {
@@ -21,6 +13,8 @@ const SideDrawerMenu = () => {
     if (isAccountActive) {
       setAccountActive(false);
     }
+
+    props.menuClickHandler();
   };
 
   const account = () => {
@@ -29,38 +23,57 @@ const SideDrawerMenu = () => {
     if (isMenuActive) {
       setMenuActive(false);
     }
+    props.accountClickHandler();
   };
-
   return (
     <nav className="side-drawer__menu">
       <ul className="side-drawer__navigation">
-        <Link
-          onClick={() => menu()}
-          to="/menu"
-          className={`${
-            isMenuActive
-              ? "active__side-drawer-link navigation-link drawer-toggle-button__menu navigation-button"
-              : "navigation-link drawer-toggle-button__menu navigation-button"
-          }`}
-        >
-          <DrawerToggleButton
+        <li onClick={() => menu()} className="list-item">
+          <button
             className={`${
-              isMenuActive ? "drawer-toggle-button__active-line" : null
+              isMenuActive
+                ? "active__side-drawer-link navigation-link drawer-toggle-button__menu navigation-button"
+                : "navigation-link drawer-toggle-button__menu navigation-button"
             }`}
-          />
-          Menu
-        </Link>
-        <Link
-          onClick={() => account()}
-          to="/account"
-          className={`${
-            isAccountActive
-              ? "active__side-drawer-link navigation-link drawer-toggle-button__menu navigation-button"
-              : "navigation-link drawer-toggle-button__menu navigation-button"
-          }`}
-        >
-          Account
-        </Link>
+          >
+            <DrawerToggleButton
+              className={`${
+                isMenuActive ? "drawer-toggle-button__active-line" : null
+              }`}
+            />
+            Menu
+          </button>
+          {/* <Link
+             to="/"
+            className={`${ 
+              isMenuActive
+                ? "active__side-drawer-link navigation-link drawer-toggle-button__menu navigation-button"
+                : "navigation-link drawer-toggle-button__menu navigation-button"
+            }`}
+          >
+          </Link> */}
+        </li>
+        <li onClick={() => account()} className="list-item">
+          <button
+            className={`${
+              isAccountActive
+                ? "active__side-drawer-link navigation-link drawer-toggle-button__menu navigation-button"
+                : "navigation-link drawer-toggle-button__menu navigation-button"
+            }`}
+          >
+            Account
+          </button>
+          {/* <Link
+            to="/"
+            className={`${
+              isAccountActive
+                ? "active__side-drawer-link navigation-link drawer-toggle-button__menu navigation-button"
+                : "navigation-link drawer-toggle-button__menu navigation-button"
+            }`}
+          >
+            Account
+          </Link> */}
+        </li>
       </ul>
     </nav>
   );

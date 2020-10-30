@@ -3,17 +3,30 @@
 }
 
 .side-drawer__navigation,
-.drawer-toggle-button__menu {
+.drawer-toggle-button__menu,
+.drawer-toggle-button__link,
+.list-item {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   justify-content: center;
   /* align-self: center; */
   /* align-content: center; */
 }
 
-.drawer-toggle-button__menu {
-  align-items: center;
+.list-item {
   width: 50%;
+  text-decoration: none;
+  color: var(--white);
+  list-style-type: none;
+}
+
+.drawer-toggle-button__menu {
+  color: var(--white);
+  background-color: transparent;
+  outline: none;
+  border: none;
+  align-items: center;
+  width: 100%;
 }
 
 .side-drawer__navigation {
