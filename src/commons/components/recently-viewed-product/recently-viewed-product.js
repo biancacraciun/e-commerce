@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import StarRating from "../star-rating/star-rating";
+import StarRating from "../../util/star-rating/star-rating";
 import { Heart, ShoppingBag } from "react-feather";
 
 import "./recently-viewed-product.css";
