@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  align-content: center;
   padding: 0 70px;
   z-index: 1;
   transition: all 200ms linear;
@@ -16,6 +17,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
+  display: flex;
+  align-content: center;
 }
 
 .active-scroll {
@@ -23,14 +26,10 @@ header {
   height: 10vh;
 }
 
-header img {
-  width: auto;
+.header-logo {
   height: 100%;
   top: 0;
-}
-
-.icon {
-  cursor: pointer;
+  width: 120px;
 }
 
 /* SEARCH-BAR */
@@ -71,7 +70,7 @@ input:-webkit-autofill:hover {
   transition: background-color 500s;
 }
 
-.search-and-shop {
+.header-icons {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -86,13 +85,24 @@ input:-webkit-autofill:hover {
   margin: 0 10px;
 }
 
+.icon {
+  cursor: pointer;
+}
+
 @media (max-width: 850px) {
-  header img {
+  .logo-link {
     display: none;
   }
 
   header {
     position: relative;
     z-index: 0;
+    align-content: center;
+  }
+}
+
+@media (max-width: 860px) {
+  .header-logo {
+    height: 70%;
   }
 }

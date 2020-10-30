@@ -1,13 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import Menu from "../../components/menu/menu";
 import Storage from "../storage/storage";
 import DrawerToggleButton from "../../components/drawer-toggle-button/drawer-toggle-button";
-
 import { Search, ShoppingBag, Heart } from "react-feather";
 import "./header.css";
-import SideDrawer from "../../components/side-drawer/side-drawer";
 
 class Header extends Component {
   state = {
@@ -18,38 +15,39 @@ class Header extends Component {
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
+    document.body.addEventListener("click", this.off);
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
+    document.body.removeEventListener("click", this.off);
   }
 
-  /* outside click */
-  outsideClose = () => {};
-
   handleScroll = () => {
-    window.pageYOffset > 500
+    window.pageYOffset > 400
       ? this.setState({ isScrolled: true })
       : this.setState({ isScrolled: false });
   };
 
-  handleFavourites = () => {
+  handleFav = () => {
     this.setState({
       isFavHidden: false,
       isCartHidden: true,
     });
   };
 
-  favoritesOff = () => {
+  favOff = () => {
     this.setState({
       isFavHidden: true,
     });
   };
 
   handleCart = () => {
-    this.setState({
-      isCartHidden: false,
-      isFavHidden: true,
+    this.setState((prevState) => {
+      return {
+        isCartHidden: !prevState.isCartHidden,
+        isFavHidden: true,
+      };
     });
   };
 
@@ -57,6 +55,11 @@ class Header extends Component {
     this.setState({
       isCartHidden: true,
     });
+  };
+
+  off = () => {
+    this.favOff();
+    this.cartOff();
   };
 
   render() {
@@ -67,15 +70,18 @@ class Header extends Component {
             this.state.isScrolled ? "active-scroll" : ""
           }`}
         >
-          <img
-            src="Sport-logo-with-sneakers.png"
-            alt="banner-eCommerce"
-            name="banner-eCommerce"
-            role="banner"
-          />
+          <Link to="/" className="logo-link">
+            <img
+              src="Sport-logo-with-sneakers.png"
+              alt="banner-eCommerce"
+              name="banner-eCommerce"
+              role="banner"
+              className="header-logo"
+            />
+          </Link>
           <DrawerToggleButton openMenu={this.props.openSideDrawer} />
           <Menu />
-          <div className="search-and-shop">
+          <div className="header-icons">
             <section className="search-container">
               <label className="search" htmlFor="search-field">
                 <Search color="white" size={25} className="icon" />
@@ -88,18 +94,18 @@ class Header extends Component {
               </label>
             </section>
 
-            <section className="fav-storage">
+            <section className="fav-container">
               <Heart
                 color="white"
                 size={25}
                 className="icon"
-                onMouseEnter={() => this.handleFavourites()}
+                onClick={() => this.handleFav()}
               />
               {this.state.isFavHidden ? null : (
                 <Storage
                   component={"wishlist"}
                   className="storage-component"
-                  closeStorage={this.favoritesOff}
+                  path={"/auth/wishlist"}
                 />
               )}
             </section>
@@ -110,13 +116,13 @@ class Header extends Component {
                 size={25}
                 className="icon"
                 id="shopping-bag"
-                onMouseEnter={() => this.handleCart()}
+                onClick={() => this.handleCart()}
               />
               {this.state.isCartHidden ? null : (
                 <Storage
                   component={"shopping cart"}
                   className="storage-component"
-                  closeStorage={this.cartOff}
+                  path={"/auth/order"}
                 />
               )}
             </section>
