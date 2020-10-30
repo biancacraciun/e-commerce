@@ -14,51 +14,49 @@ import "./menu.css";
 
 const Menu = () => {
   return (
-    <BrowserRouter>
-      <ul className="menu">
-        <li className="dropdown-container">
-          <a href="#" className="dropdown-btn">
-            Shop
-          </a>
-          <ul className="dropdown-content">
-            <li>
-              <a href="#" className="dropdown-options">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="dropdown-options">
-                Products
-              </a>
-            </li>
-            <li>
-              <a href="#" className="dropdown-options">
-                Pages
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" className="menu-options">
-            Contact Us
-          </a>
-        </li>
-        <li>
-          <a href="#" className="menu-options">
-            Sign In
-          </a>
-        </li>
-        <li>
-          <a href="#" className="menu-options">
-            Create an account
-          </a>
-        </li>
-        <li className="phone-call">
-          <PhoneCall color="white" size={20} />
-          <span>0232.766.266</span>
-        </li>
-      </ul>
-    </BrowserRouter>
+    <ul className="menu">
+      <li className="dropdown-container">
+        <Link to="/shop" className="dropdown-btn">
+          Shop
+        </Link>
+        <ul className="dropdown-content">
+          <li>
+            <Link to="/" className="dropdown-options">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/products" className="dropdown-options">
+              Products
+            </Link>
+          </li>
+          <li>
+            <Link to="/pages" className="dropdown-options">
+              Pages
+            </Link>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <Link to="/contact-us" className="menu-options">
+          Contact Us
+        </Link>
+      </li>
+      <li>
+        <Link to="/sign-in" className="menu-options">
+          Sign In
+        </Link>
+      </li>
+      <li>
+        <Link to="/create-new-account" className="menu-options">
+          Create an account
+        </Link>
+      </li>
+      <li className="phone-call">
+        <PhoneCall color="white" size={20} />
+        <span className="phone-no">0232.766.266</span>
+      </li>
+    </ul>
   );
 };
 

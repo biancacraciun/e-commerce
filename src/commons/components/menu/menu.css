@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   list-style-type: none;
-  font-family: "Oswald", sans-serif;
+
   text-transform: uppercase;
   position: relative;
   padding-inline-start: 0;
@@ -10,6 +10,7 @@
 
 .menu > li {
   margin: 0 10px;
+  font-family: "Oswald", sans-serif;
 }
 
 .menu-options,
@@ -65,11 +66,12 @@
   display: block;
 }
 
-.phone-call {
-  color: #ffffff;
+.phone-call,
+.phone-no {
+  color: var(--white);
 }
 
-.phone-call > span {
+.phone-no {
   margin: 0 10px;
   font-weight: bold;
   border: none;
