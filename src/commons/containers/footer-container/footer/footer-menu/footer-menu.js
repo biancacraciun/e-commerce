@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  useLocation,
+  Link,
+} from "react-router-dom";
 
 import "./footer-menu.css";
 
@@ -6,24 +12,24 @@ const Menu = () => {
   return (
     <div className="footer-menu">
       <h3>Menu</h3>
-      <ul className="menu-options">
+      <ul className="footer__menu-options">
         <li>
-          <a href="#">About us</a>
+          <Link to="/about-us">About us</Link>
         </li>
         <li>
-          <a href="#">Contact us</a>
+          <Link to="/contact-us">Contact us</Link>
         </li>
         <li>
-          <a href="#">My account</a>
+          <Link to="/my-account">My account</Link>
         </li>
         <li>
-          <a href="#">Orders History</a>
+          <Link to="/history">Orders History</Link>
         </li>
         <li>
-          <a href="#">My wishlist</a>
+          <Link to="/wishlist">My wishlist</Link>
         </li>
         <li>
-          <a href="#">Login</a>
+          <Link to="/log-in">Login</Link>
         </li>
       </ul>
     </div>
