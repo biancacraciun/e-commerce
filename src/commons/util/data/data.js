@@ -1,21 +1,21 @@
 export const gender = [
-  "New Arrivals",
-  "Men",
-  "Woman",
-  "Girls",
-  "Boys",
-  "Unisex",
+  "new arrivals",
+  "men",
+  "woman",
+  "girls",
+  "boys",
+  "unisex",
 ];
 
-export const products = ["Shoes", "Clothes", "Accessories"];
+export const products = ["shoes", "clothes", "accessories"];
 export const types = [
-  "Lifestyle",
-  "Running",
-  "Trail-Running",
-  "Yoga",
-  "Fitness",
-  "Cycling",
-  "Training",
+  "lifestyle",
+  "running",
+  "trail-running",
+  "yoga",
+  "fitness",
+  "cycling",
+  "training",
 ];
 
-export const pages = ["About us", "Contact us", "Shopping cart", "My account"];
+export const pages = ["about us", "contact us", "shopping cart", "my account"];
