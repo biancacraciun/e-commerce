@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useHistory, Route } from "react-router-dom";
 
-import ResponsiveMenu from "./responsive-menu/responsive-menu";
-import SideDrawerMenu from "./side-drawer-menu/side-drawer-menu";
-import ResponsiveAccountNavigation from "./responsive-account-navigation/responsive-account-navigation";
+import ResponsiveMenu from "../menu/responsive-menu/responsive-menu";
+import SideDrawerMenu from "../menu/side-drawer-menu/side-drawer-menu";
+import ResponsiveAccountNavigation from "../menu/responsive-account-navigation/responsive-account-navigation";
 import "./side-drawer.css";
 
 const SideDrawer = (props) => {
