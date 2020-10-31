@@ -1,10 +1,12 @@
 // Framework de node
 const express = require("express");
+const cors = require("cors");
 // Librărie care îți generează date, doar ca să nu pierzi tu timpul generându-le
 const patternMock = require("pattern-mock");
 
 // Se instanțiază frameworkul
 const app = express();
+app.use(cors());
 // Se setează un port [poate fi oricare alt port disponibil eg. 3000, 5000 etc.]
 const port = 8080;
 
