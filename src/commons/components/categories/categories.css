@@ -1,7 +1,5 @@
 .all-categories {
-  width: 20vw;
-  height: 100vh;
-  /* padding: 30px; */
+  height: auto;
   border-right: 1px solid var(--grayish-blue);
   border-bottom: 1px solid var(--grayish-blue);
   display: flex;
@@ -17,48 +15,45 @@
 }
 
 .options {
+  width: 25vw;
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-size: 12px;
   display: inline-block;
 }
 
-.options-list > li {
-  margin: 20px 0px;
-  list-style-type: none;
-}
-
 .options-list {
   margin-left: 40px;
 }
 
-.checkbox {
-  visibility: hidden;
+/* .checkbox {
+  /* visibility: hidden;
+  display: none;
   height: 0;
   width: 0;
   position: absolute;
-  overflow: hidden;
-}
+  overflow: hidden; 
+} */
 
-.new-checkbox {
+/* .new-checkbox {
   height: 12px;
   width: 12px;
   border: 1px solid var(--black);
   display: inline-block;
   position: relative;
   margin: 0 5px 0 5px;
-}
+} */
 
-.new-checkbox,
+/* .new-checkbox,
 label {
   cursor: pointer;
-}
+} */
 
-.checkbox:checked + .new-checkbox:before {
+/* .checkbox:checked + .new-checkbox:before {
   content: "\2714";
   position: absolute;
   top: -5px;
-}
+} */
 
 @media (max-width: 880px) {
   .all-categories {
