@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 
 import DropdownMenu from "../drowpdown-menu/dropdown-menu";
-import ShowMoreButton from "../../../util/buttons/show-more-button/show-more-button";
+import ArrowButton from "../../../util/buttons/arrow-button/arrow-button";
 import { types, products, pages } from "../../../util/data/data";
 import "./responsive-menu.css";
 
@@ -60,7 +60,7 @@ const ResponsiveMenu = () => {
           <NavLink to="/products" className="navlink">
             Products
           </NavLink>
-          <ShowMoreButton collapse={openProductsMenu} />
+          <ArrowButton collapse={openProductsMenu} />
         </li>
 
         <Route to="/products">
@@ -77,7 +77,7 @@ const ResponsiveMenu = () => {
           <NavLink to="/categories" className="navlink">
             Categories
           </NavLink>
-          <ShowMoreButton collapse={openCategoriesMenu} />
+          <ArrowButton collapse={openCategoriesMenu} />
         </li>
 
         <Route to="/categories">
@@ -98,7 +98,7 @@ const ResponsiveMenu = () => {
           <NavLink to="/pages" className="navlink">
             Pages
           </NavLink>
-          <ShowMoreButton collapse={openPagesMenu} />
+          <ArrowButton collapse={openPagesMenu} />
         </li>
 
         <Route>
