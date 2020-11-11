@@ -17,12 +17,6 @@
   background: rgba(0, 0, 0, 0.7);
 }
 
-.display-products {
-  display: flex;
-  /* flex-direction: row; */
-  height: 90vh;
-}
-
 @media (max-width: 850px) {
   .landing-page {
     background-color: var(--black);
