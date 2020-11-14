@@ -1,33 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, Component } from "react";
 import PropTypes from "prop-types";
-import ProductsContext, { ProductsProvider } from "../../context";
+import { connect, useSelector, useDispatch } from "react-redux";
+import * as actionTypes from "../../../../store/actions";
 import "./checkbox.css";
 
-const Checkbox = ({
-  type = "checkbox",
-  name,
-  id,
-  value,
-  valFn,
-  key,
-  //   checkHandler,
-}) => {
-  const [isChecked, setChecked] = useState(false);
-  const [val, setVal] = useState();
+const Checkbox = ({ type = "checkbox", name, id, value, valFn, key }) => {
+  const dispatch = useDispatch();
+  const isChecked = useSelector((state) => state.isChecked);
 
-  // checkbox toggle
-  const checkHandler = () => {
-    setChecked(!isChecked);
-    // pass checked value to categories.js
-    valFn(val, isChecked);
-  };
-
-  useEffect(() => {
-    // selected checkbox
-    if (isChecked) {
-      setVal(value);
-    }
-  });
+  console.log(value);
 
   return (
     <li className="checkbox-item" key={key}>
@@ -38,7 +19,11 @@ const Checkbox = ({
         name={name}
         value={value}
         checked={isChecked}
-        onChange={() => checkHandler()}
+        onChange={() =>
+          dispatch({
+            type: actionTypes.CHECK_CHECKBOX,
+          })
+        }
       />
       <label htmlFor={id}>{name}</label>
     </li>
