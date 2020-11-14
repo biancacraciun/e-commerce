@@ -6,17 +6,24 @@ import {
   Switch,
   useLocation,
 } from "react-router-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import reducer from "./store/reducer";
 
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
+const store = createStore(reducer);
+
 ReactDOM.render(
-  <React.StrictMode>
-    {/* <BrowserRouter> */}
-    <App />
-    {/* </BrowserRouter> */}
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      {/* <BrowserRouter> */}
+      <App />
+      {/* </BrowserRouter> */}
+    </React.StrictMode>
+  </Provider>,
   document.getElementById("root")
 );
 
