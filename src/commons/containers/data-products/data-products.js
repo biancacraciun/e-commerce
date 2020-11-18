@@ -18,7 +18,7 @@ const Data = (props) => {
   useEffect(() => {
     setFilter(props.selected);
   });
-  console.log(filter);
+  // console.log(filter);
 
   return (
     <section className="products">
