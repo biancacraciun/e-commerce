@@ -11,11 +11,13 @@ const initialState = {
 
 const remover = (arr, el) => {
   let index = arr.indexOf(el);
+  console.log("remover:", arr.splice(index, 1, el));
   return arr.splice(index, 1, el);
 };
 
 const adder = (arr, el) => {
   arr.push(el);
+  console.log("adder:", arr);
   return arr;
 };
 
@@ -29,6 +31,7 @@ const conditional = (bool, arr, el) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.CHECKBOX_FILTER:
+      console.log(state.filters.id);
       return {
         ...state,
         filters: {
