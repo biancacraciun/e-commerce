@@ -1,27 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {
-  BrowserRouter,
-  BrowserRouter as Router,
-  Switch,
-  useLocation,
-} from "react-router-dom";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import reducer from "./store/reducer";
+import thunk from "redux-thunk";
 
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-const store = createStore(reducer);
+const getIds = (store) => {
+  return (next) => {
+    return (action) => {
+      console.log("middleware", action);
+      const result = next(action);
+      console.log("newstate", store.getState());
+      return result;
+    };
+  };
+};
 
+// const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
+const store = createStore(reducer, applyMiddleware(thunk));
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      {/* <BrowserRouter> */}
       <App />
-      {/* </BrowserRouter> */}
     </React.StrictMode>
   </Provider>,
   document.getElementById("root")
