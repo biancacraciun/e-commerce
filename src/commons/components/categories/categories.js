@@ -10,12 +10,15 @@ class Categories extends Component {
   }
 
   render() {
+    console.log("categories:", this.props.categories);
+    console.log("isChecked:", this.props.isChecked);
     return (
       <div className="all-categories">
         <span className="container-title">SHOP BY:</span>
         <nav className="options">
           <ul className="options-list">
             {this.props.categories.map((checkbox) => {
+              console.log("checked id:", checkbox.id);
               return (
                 <li className="checkbox-item" key={checkbox.input}>
                   <input
