@@ -33,6 +33,47 @@ const port = 8080;
 // });
 
 const data = {
+  // categories: [
+  //   "new arrivals",
+  //   "men",
+  //   "women",
+  //   "girls",
+  //   "boys",
+  //   "unisex",
+  //   "clothes",
+  //   "shoes",
+  //   "accessories",
+  // ],
+  categories: [
+    {
+      id: "new-arrivals",
+      input: "new arrivals",
+    },
+    {
+      id: "men",
+      input: "men",
+    },
+    {
+      id: "women",
+      input: "women",
+    },
+    {
+      id: "unisex",
+      input: "unisex",
+    },
+    {
+      id: "clothes",
+      input: "clothes",
+    },
+    {
+      id: "shoes",
+      input: "shoes",
+    },
+    {
+      id: "accessories",
+      input: "accessories",
+    },
+  ],
   products: [
     {
       category: "shoes",
@@ -3714,6 +3755,7 @@ const data = {
 // Se crează o rută pentru produse
 // exact aceeași treabă ca mai sus
 app.get("/products", (req, res) => res.json(data.products));
+app.get("/categories", (req, res) => res.json(data.categories));
 
 // Se crează o rută pentru filtrarea produselor
 // atunci când se accesează http://localhost:8080/products/category1/category2
