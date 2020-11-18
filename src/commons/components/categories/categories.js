@@ -1,47 +1,52 @@
-import React, { useState, useEffect } from "react";
-
-import { checkboxes } from "../../util/data/data";
-import Checkbox from "../../util/inputs/checkbox/checkbox";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as actionTypes from "../../../store/actions/actions";
 
 import "./categories.css";
 
-const Categories = (props) => {
-  // const [criteria, setCriteria] = useState([]);
-  const [criteria, setCriteria] = useState("");
+class Categories extends Component {
+  componentDidMount() {
+    this.props.onSetCategories();
+  }
 
-  const valHandler = (data, isChecked) => {
-    if (isChecked) {
-      // setCriteria(criteria.concat(data));
-      setCriteria(data);
-    }
+  render() {
+    return (
+      <div className="all-categories">
+        <span className="container-title">SHOP BY:</span>
+        <nav className="options">
+          <ul className="options-list">
+            {this.props.categories.map((checkbox) => {
+              return (
+                <li className="checkbox-item" key={checkbox.input}>
+                  <input
+                    type="checkbox"
+                    id={checkbox.id}
+                    value={checkbox.input}
+                    checked={this.props.isChecked}
+                    onChange={() => this.props.onCheck(checkbox.id)}
+                  />
+                  <label htmlFor={checkbox.input}>{checkbox.input}</label>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    isChecked: state.filters.isChecked,
+    categories: state.categories,
   };
-
-  useEffect(() => {
-    if (criteria !== "") {
-      props.selectedData(criteria);
-    }
-  });
-
-  return (
-    <div className="all-categories">
-      <span className="container-title">SHOP BY:</span>
-      <nav className="options">
-        <ul className="options-list">
-          {checkboxes.map((checkbox) => {
-            return (
-              <Checkbox
-                key={checkbox.id}
-                valFn={valHandler}
-                id={checkbox.id}
-                name={checkbox.name}
-                value={checkbox.value}
-              />
-            );
-          })}
-        </ul>
-      </nav>
-    </div>
-  );
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onCheck: (value) => dispatch(actionTypes.checkboxFilter(value)),
+    onSetCategories: () => dispatch(actionTypes.initCategories()),
+  };
 };
 
-export default Categories;
+export default connect(mapStateToProps, mapDispatchToProps)(Categories);

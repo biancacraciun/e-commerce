@@ -26,34 +26,14 @@
   margin-left: 40px;
 }
 
-/* .checkbox {
-  /* visibility: hidden;
-  display: none;
-  height: 0;
-  width: 0;
-  position: absolute;
-  overflow: hidden; 
-} */
+.checkbox-item > input {
+  margin: 0 5px;
+}
 
-/* .new-checkbox {
-  height: 12px;
-  width: 12px;
-  border: 1px solid var(--black);
-  display: inline-block;
-  position: relative;
-  margin: 0 5px 0 5px;
-} */
-
-/* .new-checkbox,
-label {
-  cursor: pointer;
-} */
-
-/* .checkbox:checked + .new-checkbox:before {
-  content: "\2714";
-  position: absolute;
-  top: -5px;
-} */
+.checkbox-item {
+  margin: 20px 0px;
+  list-style-type: none;
+}
 
 @media (max-width: 880px) {
   .all-categories {
